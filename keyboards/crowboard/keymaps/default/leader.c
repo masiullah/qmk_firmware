@@ -25,6 +25,8 @@ void leader_end_user(void) {
         SEND_STRING(BP);
     }else if (leader_sequence_two_keys(KC_C, KC_N)) {
         SEND_STRING(CN);
+    }else if (leader_sequence_two_keys(KC_G, KC_M)) {
+        SEND_STRING(GM);
     } else if (leader_sequence_one_key(KC_P)) {
         tap_code16(S(C(G(KC_4))));
     } else if (leader_sequence_one_key(KC_X)) {
