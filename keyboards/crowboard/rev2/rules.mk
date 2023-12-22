@@ -1,0 +1,2 @@
+#VPATH += keyboards/gboards
+

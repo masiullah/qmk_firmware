@@ -1,6 +1,6 @@
-// Copyright 2022 doesntfazer (@doesntfazer)
-// SPDX-License-Identifier: GPL-2.0-or-later
+#define LEADER_NO_TIMEOUT
 
-#pragma once
+// Prevent normal rollover on alphas from accidentally triggering mods.
+// #define IGNORE_MOD_TAP_INTERRUPT
 
-#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+// #define COMBO_VARIABLE_LEN
