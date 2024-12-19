@@ -57,7 +57,8 @@ uint32_t startup_exec(uint32_t trigger_time, void *cb_arg) {
 
 #if defined(OS_DETECTION_ENABLE) && defined(DEFERRED_EXEC_ENABLE)
 
-void keyboard_post_init_user(void) {
+void keyboard_post_init_user(void) { 
+//   secure_unlock();
   defer_exec(100, startup_exec, NULL);
 }
 

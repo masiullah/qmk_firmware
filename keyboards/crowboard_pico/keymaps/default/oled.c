@@ -50,7 +50,6 @@ bool oled_task_user(void) {
     // oled_write_ln("Lock", false);
     oled_write_ln("CWD", is_caps_word_on());
     oled_write_ln("CAPS", led_usb_state & (2));
-
     /* Show Ctrl-Gui Swap options */
     oled_write_ln("", true);
     // oled_write_ln("Mode", false);
@@ -67,6 +66,8 @@ bool oled_task_user(void) {
     oled_write_ln("CTL", (modifiers & MOD_MASK_CTRL));
     oled_write_ln("ALT", (modifiers & MOD_MASK_ALT));
     oled_write_ln("GUI", (modifiers & MOD_MASK_GUI));
+
+    oled_write_ln("LOCK", secure_is_locked());
 
     return false;
 }

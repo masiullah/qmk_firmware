@@ -69,6 +69,14 @@
     "oneshot": {
         "timeout": 3000
     },
+    "secure": {
+        "enabled": true,
+        "idle_timeout": 6000000,
+        "unlock_timeout": 5000,
+        "unlock_sequence": [
+            [0, 0]
+        ]
+    },
     "bootmagic": {
         "enabled": true,
         "matrix": [

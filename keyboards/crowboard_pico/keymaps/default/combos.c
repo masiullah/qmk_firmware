@@ -7,7 +7,9 @@ enum combo_events {
  COMBO_5,
  COMBO_6,
 };
+#endif
 
+#ifdef COMBO_ENABLE
 const uint16_t PROGMEM combo1[] = {LT(3,KC_TAB), LT(2,KC_BSPC), COMBO_END};
 const uint16_t PROGMEM combo2[] = {LT(1,KC_SPC), OSM(MOD_LSFT), COMBO_END};
 const uint16_t PROGMEM combo3[] = {LT(3,KC_TAB), LT(1,KC_SPC),  KC_P, COMBO_END};

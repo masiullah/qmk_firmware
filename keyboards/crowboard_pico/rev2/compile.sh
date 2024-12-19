@@ -1,0 +1,1 @@
+qmk compile -kb crowboard_pico/rev2 -km default -c 
