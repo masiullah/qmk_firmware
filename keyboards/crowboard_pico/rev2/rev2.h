@@ -18,7 +18,8 @@
 
 enum keyboard_keycodes {
     GUI_TAB = SAFE_RANGE,
-    ALT_TAB
+    ALT_TAB,
+    REDO
     // KC_ALT_TAB = SAFE_RANGE,
     // KC_CMD_TAB,
     // KC_ALT_SFT_TAB,

@@ -39,7 +39,13 @@ void leader_end_user(void) {
         bootloader_jump();
     } else if (leader_sequence_one_key(KC_D)) {
         tap_code16(A(C(KC_DEL)));
-    }
+    } else if (leader_sequence_one_key(KC_I)) {
+        if (keymap_config.swap_lctl_lgui) {
+            tap_code16(G(KC_TAB));
+        } else {
+            tap_code16(C(KC_UP));
+        }
+    } 
 }
 
 #endif

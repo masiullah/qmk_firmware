@@ -15,7 +15,7 @@
     [
         "KC_ESC",               "KC_TRNS",            "ALT_TAB",            "G(KC_SLSH)",         "G(KC_GRV)",          "KC_INS",             "KC_HOME",            "KC_UP",              "KC_END",             "KC_BSPC",
         "KC_TAB",               "KC_GRV",             "G(KC_BSPC)",         "G(A(KC_L))",         "A(C(KC_O))",         "KC_ENT",             "KC_LEFT",            "KC_DOWN",            "KC_RGHT",            "KC_PSCR",
-        "KC_CAPS",              "KC_TRNS",            "A(S(KC_LEFT))",      "A(S(KC_RIGHT))",     "G(KC_Y)",            "KC_BSPC",            "KC_DEL",             "KC_PGDN",            "KC_PGUP",            "KC_ENT",
+        "KC_CAPS",              "KC_TRNS",            "KC_TRNS",            "G(KC_Z)",            "REDO",               "KC_BSPC",            "KC_DEL",             "KC_PGDN",            "KC_PGUP",            "KC_ENT",
                                 "KC_TRNS",            "KC_TRNS",            "KC_TRNS",            "KC_SPC",             "KC_RSFT",            "KC_BSPC",            "G(S(KC_M))",         "KC_TRNS"
         ],
     [
@@ -33,7 +33,7 @@
     [
         "KC_ESC",               "KC_HOME",            "G(S(KC_R))",         "G(A(KC_R))",         "KC_TRNS",            "KC_TRNS",            "KC_BTN1",            "KC_MS_U",            "KC_BTN2",            "KC_TRNS",
         "G(S(KC_O))",           "KC_LEFT",            "G(KC_BSPC)",         "G(S(KC_F))",         "KC_ENT",             "KC_TRNS",            "A(S(KC_LEFT))",      "KC_MS_D",            "A(S(KC_RIGHT))",     "KC_TRNS",
-        "G(KC_Z)",              "G(KC_X)",            "G(KC_SLSH)",         "G(A(KC_B))",         "C(S(KC_B))",         "KC_NO",              "KC_ACL0",            "KC_ACL1",            "KC_ACL2",            "KC_TRNS",
+        "G(KC_Z)",              "G(KC_X)",            "G(KC_SLSH)",         "G(A(KC_B))",         "G(KC_Y)",            "KC_NO",              "KC_ACL0",            "KC_ACL1",            "KC_ACL2",            "KC_TRNS",
                                 "KC_TRNS",            "KC_TRNS",            "KC_TRNS",            "C(KC_SPC)",          "KC_TRNS",            "KC_TRNS",            "KC_TRNS",            "KC_TRNS"
         ],
     [
