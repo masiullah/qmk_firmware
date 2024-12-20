@@ -3,6 +3,7 @@
 
 #ifdef OLED_ENABLE
 
+bool secure_locked = false;
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_270;
 }
@@ -13,6 +14,30 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 // }
 
 bool oled_task_user(void) {
+    if(secure_is_locked()){
+        oled_write_ln("", false);
+        oled_write_ln("", false);
+        oled_write_ln("  L ", false);
+        oled_write_ln("", false);
+        oled_write_ln("  O ", false);
+        oled_write_ln("", false);
+        oled_write_ln("  C ", false);
+        oled_write_ln("", false);
+        oled_write_ln("  K ", false);
+        oled_write_ln("", false);
+        oled_write_ln("  E ", false);
+        oled_write_ln("", false);
+        oled_write_ln("  D ", false);
+        oled_write_ln("", false);
+        oled_write_ln("", false);
+        oled_write_ln("", false);
+        secure_locked = true;
+        return false;
+    }
+    if(secure_locked){
+        oled_clear();
+        secure_locked = false;
+    }
     // render_logo();
     switch (get_highest_layer(layer_state)) {
         case BASE:
@@ -67,7 +92,7 @@ bool oled_task_user(void) {
     oled_write_ln("ALT", (modifiers & MOD_MASK_ALT));
     oled_write_ln("GUI", (modifiers & MOD_MASK_GUI));
 
-    oled_write_ln("LOCK", secure_is_locked());
+    
 
     return false;
 }
