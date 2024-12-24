@@ -35,7 +35,16 @@
         "nkro": false,
         "combo": true,
         "oled": true,
-        "leader": true
+        "leader": true,
+        "audio": true,
+        "wpm": true
+    },
+    "audio": {
+        "default": {
+            "on": false,
+            "clicky": false
+        },
+        "driver": "pwm_hardware"
     },
     "encoder": {
         "enabled": true,
@@ -71,7 +80,7 @@
     },
     "secure": {
         "enabled": true,
-        "idle_timeout": 6000000,
+        "idle_timeout": 900000,
         "unlock_timeout": 5000,
         "unlock_sequence": [
             [0, 0]

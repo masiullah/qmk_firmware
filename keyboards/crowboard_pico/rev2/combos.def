@@ -4,4 +4,3 @@ COMB(COMBO_NPD1,            TG(6),                LT(3,KC_TAB), LT(1,KC_SPC),  K
 COMB(COMBO_NPD2,            TG(6),                LT(3,KC_TAB), LT(1,KC_SPC),  KC_PGUP)
 COMB(COMBO_MOS1,            TG(7),                OSM(MOD_LSFT),  LT(2,KC_BSPC), KC_Q)
 COMB(COMBO_MOS2,            TG(7),                OSM(MOD_LSFT),  LT(2,KC_BSPC), KC_ESC)
-

@@ -19,13 +19,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED_MASK 0U
 // Timeout window in ms in which the double tap can occur.
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
-
-
 
 #ifdef VIA_ENABLE
 #    define TRANSIENT_EEPROM_SIZE 500
@@ -39,4 +36,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define I2C1_SDA_PIN GP0
 #    define OLED_TIMEOUT 15000
 #    define OLED_SCROLL_TIMEOUT 5000
+#endif
+
+/* Audio */
+#ifdef AUDIO_ENABLE
+#    define AUDIO_PIN GP5
+#    define AUDIO_PWM_DRIVER PWMD2
+#    define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_B
+#    define AUDIO_INIT_DELAY
+
+#    define STARTUP_SONG SONG(NO_SOUND)
 #endif

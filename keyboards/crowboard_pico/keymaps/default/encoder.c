@@ -1,16 +1,22 @@
 #include QMK_KEYBOARD_H
 #include "layers.h"
 
-
-
 #ifdef ENCODER_ENABLE
-
+#    ifdef AUDIO_ENABLE
+float song_lock_encoder[][2] = SONG(TERMINAL_SOUND);
+#    endif
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     uint8_t modifiers   = get_mods() | get_oneshot_mods();
     bool    sft_pressed = modifiers & MOD_MASK_SHIFT;
     bool    alt_pressed = modifiers & MOD_MASK_ALT;
     bool    cmd_pressed = modifiers & MOD_MASK_GUI;
     bool    ctl_pressed = modifiers & MOD_MASK_CTRL;
+    if (secure_is_locked()) {
+#    ifdef AUDIO_ENABLE
+        PLAY_SONG(song_lock_encoder);
+        return false;
+#    endif
+    }
     switch (get_highest_layer(layer_state)) {
         case NUM:
             if (clockwise) {
@@ -40,13 +46,13 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
         default:
             if (index != 0) {
                 if (sft_pressed) {
-                    #ifdef RGB_MATRIX_ENABLE
+#    ifdef RGB_MATRIX_ENABLE
                     if (clockwise) {
                         rgb_matrix_step_reverse_noeeprom();
                     } else {
                         rgb_matrix_step_noeeprom();
                     }
-                    #endif
+#    endif
                 } else if (alt_pressed) {
                     if (!clockwise) {
                         tap_code16(KC_TAB);
@@ -74,13 +80,13 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
                 }
             } else {
                 if (sft_pressed) {
-                    #ifdef RGB_MATRIX_ENABLE
+#    ifdef RGB_MATRIX_ENABLE
                     if (clockwise) {
                         rgb_matrix_step_reverse_noeeprom();
                     } else {
                         rgb_matrix_step_noeeprom();
                     }
-                    #endif
+#    endif
                 } else if (alt_pressed) {
                     if (!clockwise) {
                         tap_code16(KC_TAB);

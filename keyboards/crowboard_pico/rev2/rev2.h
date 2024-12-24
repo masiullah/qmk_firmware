@@ -16,26 +16,4 @@
 
 #include "quantum.h"
 
-enum keyboard_keycodes {
-    GUI_TAB = SAFE_RANGE,
-    ALT_TAB,
-    REDO
-    // KC_ALT_TAB = SAFE_RANGE,
-    // KC_CMD_TAB,
-    // KC_ALT_SFT_TAB,
-    // KC_CMD_SFT_TAB,
-    // STORE_SETUPS,
-    // PRINT_SETUPS,
-    // NEW_SAFE_RANGE,
-    // CTL_TAB
-};
-
-
-
-// typedef struct sticky_mod_s {
-//     uint16_t mod;
-//     uint16_t keycode;
-//     bool     active;
-//     bool     is_shifted;
-
-// } sticky_mod;
+enum keyboard_keycodes { GUI_TAB = SAFE_RANGE, ALT_TAB, REDO };

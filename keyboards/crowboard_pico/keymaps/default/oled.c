@@ -3,7 +3,7 @@
 
 #ifdef OLED_ENABLE
 
-bool secure_locked = false;
+bool            secure_locked = false;
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     return OLED_ROTATION_270;
 }
@@ -14,7 +14,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 // }
 
 bool oled_task_user(void) {
-    if(secure_is_locked()){
+    if (secure_is_locked()) {
         oled_write_ln("", false);
         oled_write_ln("", false);
         oled_write_ln("  L ", false);
@@ -34,7 +34,7 @@ bool oled_task_user(void) {
         secure_locked = true;
         return false;
     }
-    if(secure_locked){
+    if (secure_locked) {
         oled_clear();
         secure_locked = false;
     }
@@ -75,6 +75,9 @@ bool oled_task_user(void) {
     // oled_write_ln("Lock", false);
     oled_write_ln("CWD", is_caps_word_on());
     oled_write_ln("CAPS", led_usb_state & (2));
+#    ifdef AUDIO_ENABLE
+    oled_write_ln("AUD", audio_is_on());
+#    endif
     /* Show Ctrl-Gui Swap options */
     oled_write_ln("", true);
     // oled_write_ln("Mode", false);
@@ -91,9 +94,6 @@ bool oled_task_user(void) {
     oled_write_ln("CTL", (modifiers & MOD_MASK_CTRL));
     oled_write_ln("ALT", (modifiers & MOD_MASK_ALT));
     oled_write_ln("GUI", (modifiers & MOD_MASK_GUI));
-
-    
-
     return false;
 }
 
